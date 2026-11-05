@@ -11,19 +11,22 @@ export default function PracticeAreasSection() {
   const router = useRouter();
 
   const handleSelectArea = (areaTitle: string) => {
-    // Μετάβαση στη dedicated σελίδα επικοινωνίας με query param και hash για τη φόρμα
     router.push(
       `/contact?topic=${encodeURIComponent(areaTitle)}#contact-form`
     );
   };
 
   return (
-    <section className="pt-36 pb-24 lg:pt-44 lg:pb-32 bg-ivory text-slate-900">
+    <section
+      id="practice-areas"
+      className="py-24 lg:py-32 bg-ivory text-slate-900 scroll-mt-16"
+    >
       <div className="container">
         <motion.div
           variants={staggerContainer}
           initial="hidden"
-          animate="visible"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-80px" }}
           className="flex flex-col md:flex-row md:items-end justify-between mb-16 pb-8 border-b border-slate-200/90"
         >
           <div>
@@ -33,20 +36,19 @@ export default function PracticeAreasSection() {
             >
               02 // ΤΟΜΕΙΣ ΕΞΕΙΔΙΚΕΥΣΗΣ
             </motion.span>
-            <motion.h1
+            <motion.h2
               variants={fadeUpVariant}
               className="font-serif text-4xl sm:text-5xl font-semibold text-royal-950 tracking-tight"
             >
               Τομείς Δικαίου & Υπηρεσίες
-            </motion.h1>
+            </motion.h2>
           </div>
 
           <motion.p
             variants={fadeUpVariant}
             className="text-sm sm:text-base text-slate-600 max-w-md mt-4 md:mt-0 leading-relaxed"
           >
-            {SITE_CONTENT.about.leadParagraphs[2]} Επιλέξτε τον τομέα που σας
-            απασχολεί για να μεταβείτε στη σελίδα επικοινωνίας.
+            {SITE_CONTENT.about.leadParagraphs[2]}
           </motion.p>
         </motion.div>
 
@@ -74,9 +76,9 @@ export default function PracticeAreasSection() {
               </div>
 
               <div>
-                <h2 className="font-serif text-2xl sm:text-3xl font-semibold text-royal-950 group-hover:text-white transition-colors mb-3">
+                <h3 className="font-serif text-2xl sm:text-3xl font-semibold text-royal-950 group-hover:text-white transition-colors mb-3">
                   {area.title}
-                </h2>
+                </h3>
                 <p className="text-sm sm:text-base text-slate-600 group-hover:text-slate-300 transition-colors leading-relaxed">
                   {area.description}
                 </p>

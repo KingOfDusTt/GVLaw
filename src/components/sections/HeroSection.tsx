@@ -3,7 +3,7 @@
 import React from "react";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowUpRight, MapPin, Scale, ShieldCheck } from "lucide-react";
+import { ArrowUpRight, ArrowDownRight, MapPin, Scale, ShieldCheck } from "lucide-react";
 import { SITE_CONTENT } from "@/data/content";
 import {
   fadeUpVariant,
@@ -14,7 +14,7 @@ import {
 
 export default function HeroSection() {
   return (
-    <section className="relative min-h-[92vh] bg-royal-950 text-white overflow-hidden flex items-center pt-28 pb-16 lg:py-24">
+    <section className="relative min-h-screen min-h-[100dvh] bg-royal-950 text-white overflow-hidden flex items-center pt-28 pb-16 lg:pt-24 lg:pb-16">
       {/* Subtle Architectural Grid Lines */}
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(to_right,rgba(255,255,255,0.03)_1px,transparent_1px),linear-gradient(to_bottom,rgba(255,255,255,0.03)_1px,transparent_1px)] bg-[size:4rem_4rem]" />
 
@@ -31,15 +31,13 @@ export default function HeroSection() {
             animate="visible"
             className="lg:col-span-7 lg:pr-10"
           >
-            <motion.div
+            {/* 01 // ΤΑΥΤΟΤΗΤΑ ΓΡΑΦΕΙΟΥ στη θέση του παλιού location badge */}
+            <motion.span
               variants={fadeUpVariant}
-              className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full border border-white/15 bg-white/[0.03] backdrop-blur-md mb-8"
+              className="text-xs font-mono uppercase tracking-[0.25em] text-royal-400 block mb-5"
             >
-              <MapPin className="w-3.5 h-3.5 text-royal-400" />
-              <span className="text-xs uppercase tracking-[0.2em] text-slate-300 font-medium">
-                GV Law • Κορυδαλλος, Αττικη
-              </span>
-            </motion.div>
+              01 // ΤΑΥΤΟΤΗΤΑ ΓΡΑΦΕΙΟΥ
+            </motion.span>
 
             <motion.h1
               variants={fadeUpVariant}
@@ -70,7 +68,7 @@ export default function HeroSection() {
               {SITE_CONTENT.about.leadParagraphs[1]}
             </motion.p>
 
-            {/* CTAs με τη νέα, εναρμονισμένη τυπογραφία */}
+            {/* CTAs */}
             <motion.div
               variants={fadeUpVariant}
               className="flex flex-wrap items-center gap-4 sm:gap-5"
@@ -80,10 +78,10 @@ export default function HeroSection() {
                 <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
               </a>
 
-              <Link href="/practice-areas" className="group btn-secondary-dark">
+              <a href="#practice-areas" className="group btn-secondary-dark">
                 <span>Τομείς Εξειδίκευσης</span>
-                <ArrowUpRight className="w-4 h-4 text-royal-400 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
-              </Link>
+                <ArrowDownRight className="w-4 h-4 text-royal-400 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:translate-y-0.5" />
+              </a>
             </motion.div>
 
             {/* Εταίροι Quick Links */}
@@ -146,8 +144,12 @@ export default function HeroSection() {
 
                 <div className="absolute inset-0 bg-gradient-to-t from-royal-950 via-royal-900/45 to-transparent" />
 
-                <div className="absolute top-5 right-5 px-3 py-1 bg-royal-950/70 backdrop-blur-md border border-white/15 text-[11px] uppercase tracking-widest text-slate-300">
-                  Δικηγορικος Συλλογος Πειραιως
+                {/* Πάνω δεξιά: GV Law • Κορυδαλλος, Αττικη με την πινέζα */}
+                <div className="absolute top-5 right-5 inline-flex items-center gap-2 px-3.5 py-1.5 bg-royal-950/75 backdrop-blur-md border border-white/15">
+                  <MapPin className="w-3.5 h-3.5 text-royal-400 shrink-0" />
+                  <span className="text-[11px] uppercase tracking-[0.18em] text-slate-200 font-medium">
+                    GV Law • Κορυδαλλος, Αττικη
+                  </span>
                 </div>
 
                 <div className="absolute bottom-5 left-5 right-5 p-5 bg-royal-950/75 backdrop-blur-xl border border-white/15 flex items-center gap-4">
@@ -157,8 +159,8 @@ export default function HeroSection() {
                     className="w-12 h-12 object-contain shrink-0"
                   />
                   <div className="border-l border-white/15 pl-4">
-                    <p className="text-xs uppercase tracking-[0.18em] text-royal-200 font-medium">
-                      Γκατζιου & Βαλαδακης
+                    <p className="text-xs tracking-[0.15em] text-royal-200 font-medium">
+                      Ε.Θ. Γκάτζιου & Ι.Εμ. Βαλαδάκης
                     </p>
                     <p className="text-xs text-slate-300 mt-1 leading-relaxed">
                       Συνέπεια, διακριτικότητα και εξατομικευμένη στρατηγική.

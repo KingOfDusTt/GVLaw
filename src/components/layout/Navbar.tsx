@@ -6,9 +6,7 @@ import { usePathname } from "next/navigation";
 import { Menu, X, ArrowUpRight } from "lucide-react";
 
 const NAV_LINKS = [
-  { label: "Αρχική", href: "/" },
-  { label: "Ποιοι Είμαστε", href: "/about" },
-  { label: "Τομείς Εξειδίκευσης", href: "/practice-areas" },
+  { label: "Ποιοι Είμαστε", href: "/" },
   { label: "Οι Δικηγόροι", href: "/partners" },
   { label: "Επικοινωνία", href: "/contact" },
 ];
@@ -46,8 +44,8 @@ export default function Navbar() {
             <span className="font-serif text-xl font-semibold tracking-wider text-white leading-none">
               GV LAW
             </span>
-            <span className="text-[10px] uppercase tracking-[0.22em] text-royal-200 mt-1">
-              Γκατζιου & Βαλαδακης
+            <span className="text-[10px] tracking-[0.18em] text-royal-200 mt-1">
+              Ε.Θ. Γκάτζιου & Ι.Εμ. Βαλαδάκης
             </span>
           </div>
         </Link>
@@ -79,7 +77,7 @@ export default function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden lg:block">
           <Link
-            href="/contact"
+            href="/contact#contact-form"
             className="group inline-flex items-center gap-2.5 px-5 py-2.5 font-serif text-base font-medium tracking-wide text-white bg-royal hover:bg-royal-600 border border-royal-400/30 transition-all"
           >
             <span>Κλείστε Ραντεβού</span>
