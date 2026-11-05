@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    background-color: #FAF9F6;
+    color: #0F172A;
+  }
+}
+
+@layer components {
+  /* Ενιαία, εκλεπτυσμένη τυπογραφία για όλα τα Primary & Secondary Buttons */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-3 bg-royal hover:bg-royal-600 text-white font-serif text-[17px] font-medium tracking-wide px-7 py-3.5 transition-all duration-300 shadow-royal-glow;
+  }
+
+  .btn-secondary-dark {
+    @apply inline-flex items-center justify-center gap-3 px-6 py-3.5 font-serif text-[17px] font-medium tracking-wide text-slate-200 hover:text-white border border-white/15 hover:border-white/40 bg-white/[0.02] transition-all duration-300;
+  }
+
+  .btn-secondary-light {
+    @apply inline-flex items-center justify-center gap-3 px-6 py-3.5 font-serif text-[17px] font-medium tracking-wide text-royal-950 hover:text-royal border border-slate-300 hover:border-royal bg-white transition-all duration-300;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B1120;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E3A8A;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #4169E1;
+}
